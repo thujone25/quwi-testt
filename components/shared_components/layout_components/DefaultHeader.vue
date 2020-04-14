@@ -3,11 +3,15 @@
     <nuxt-link to="/"
                class="default-header__logo-link" />
     <nav class="default-header__links-cont">
-      <template v-if="authed"></template>
+      <!-- <template v-if="authed"></template>
       <template v-else>
         <nuxt-link :to="{name: 'SignInPage'}"
                    class="default-header__nav-link">LOGIN</nuxt-link>
-      </template>
+      </template> -->
+      <nuxt-link :to="{name: 'SignInPage'}"
+                 class="default-header__nav-link">LOGIN</nuxt-link>
+      <nuxt-link :to="{name: 'HomePage'}"
+                 class="default-header__nav-link">PROJECTS</nuxt-link>
     </nav>
   </header>
 </template>

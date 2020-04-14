@@ -76,3 +76,6 @@ textarea {
   resize: none;
   overflow: auto;
 }
+ul {
+  list-style-type: none;
+}

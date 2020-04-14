@@ -11,7 +11,8 @@
               :error-text="passwordError"
               :placeholder="'Password'"
               class="sign-in-form__input" />
-    <qw-btn :text="'LOGIN'" />
+    <qw-btn :text="'LOGIN'"
+            class="sign-in-form__btn" />
   </form>
 </template>
 
@@ -43,6 +44,11 @@
   }
   .sign-in-form__input {
     margin-bottom: 15px;
+  }
+  .sign-in-form__btn {
+    display: inline-block;
+    width: auto;
+    padding: 0 30px;
   }
 </style>
 

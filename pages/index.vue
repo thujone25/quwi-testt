@@ -141,6 +141,35 @@
           }
         ]
       };
+    },
+    computed: {
+      activeModal() { return this.$store.state.ModalStore.activeComponent; }
+    },
+    watch: {
+      $route() {
+        this.manageModalState();
+      },
+      activeModal() {
+        if (this.activeModal === '') this.$router.push({name: this.$route.name, query: {}});
+      }
+    },
+    methods: {
+      manageModalState() {
+        if (this.$route.query.edit_item) {
+          this.$store.commit('ModalStore/setModal', {
+            component: 'project-edit-modal',
+            title: 'Edit project info',
+            data: {
+              project: this.projects.filter((item) => item.id == this.$route.query.edit_item)[0]
+            }
+          });
+        } else {
+          this.$store.commit('ModalStore/unsetModal');
+        }
+      }
+    },
+    mounted() {
+      this.manageModalState();
     }
   }
 </script>

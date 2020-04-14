@@ -157,5 +157,10 @@
     width: 100%;
     max-width: 767px;
   }
+  @media (max-width: 600px) {
+    .home-page {
+      padding: 10px;
+    }
+  }
 </style>
 

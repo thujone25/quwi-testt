@@ -90,5 +90,32 @@
   .project-item__data-table-cell--red {
     color: red;
   }
+  @media (max-width: 600px) {
+    .project-item__link {
+      padding: 15px;
+    }
+    .project-item__data-table {
+      display: block;
+    }
+    .project-item__data-table-cell--logo {
+      float: left;
+    }
+    .project-item__data-table-cell--name,
+    .project-item__data-table-cell--status {
+      float: right;
+    }
+    .project-item__data-table-cell--name {
+      display: inline-block;
+      width: auto;
+      padding-left: 0;
+    }
+    .project-item__data-table-cell--status {
+      clear: right;
+    }
+    .project-item__data-table-cell--hours {
+      width: 100%;
+      clear: both;
+    }
+  }
 </style>
 

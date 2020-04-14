@@ -43,6 +43,7 @@
 <style scoped>
   .project-item-hours {
     display: table;
+    width: 100%;
   }
   .project-item-hours__row {
     display: table-row;
@@ -50,6 +51,9 @@
   .project-item-hours__label,
   .project-item-hours__value {
     display: table-cell;
+  }
+  .project-item-hours__label {
+    font-weight: normal;
   }
   .project-item-hours__value {
     padding-left: 10px;

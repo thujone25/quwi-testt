@@ -59,6 +59,7 @@
   .project-item__data-table-cell {
     display: block;
     flex-shrink: 0;
+    font-weight: bold;
   }
   .project-item__data-table-cell--logo {
     display: block;
@@ -79,6 +80,15 @@
   .project-item__data-table-cell--status {
     flex-grow: 1;
     text-align: center;
+  }
+  .project-item__data-table-cell--hours {
+    width: 170px;
+  }
+  .project-item__data-table-cell--green {
+    color: green;
+  }
+  .project-item__data-table-cell--red {
+    color: red;
   }
 </style>
 

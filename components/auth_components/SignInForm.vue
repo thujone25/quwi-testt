@@ -76,9 +76,11 @@
       submitData() {
         this.emailError = '';
         this.passwordError = '';
+
         if (!this.validateEmail(this.email)) this.emailError = 'Email is invalid';
         if (!this.email.trim()) this.emailError = 'Email is required';
         if (!this.password.trim()) this.passwordError = 'Password is required';
+
         if (!this.emailError && !this.passwordError) {
           this.setRequestProgress(true);
           this.signIn({email: this.email, password: this.password}).then(() => {

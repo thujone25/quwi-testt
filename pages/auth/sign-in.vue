@@ -22,7 +22,7 @@
       ...mapActions('AuthStore', ['signIn']),
       ...mapMutations(['setRequestProgress']),
       catchSuccess() {
-        this.$router.push('/');
+        this.$router.replace('/');
       }
     }
   }

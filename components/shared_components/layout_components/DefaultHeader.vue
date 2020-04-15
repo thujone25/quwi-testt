@@ -28,7 +28,7 @@
       ...mapActions('AuthStore', ['logOut']),
       makeLogout() {
         this.logOut().then(() => {
-          this.$router.push({name: 'SignInPage'});
+          this.$router.replace({name: 'SignInPage'});
         });
       }
     }

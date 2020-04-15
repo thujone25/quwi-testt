@@ -19,7 +19,9 @@
 
   export default {
     asyncData({store}) {
-      return store.dispatch('ProjectsStore/getAllProjects');
+      return store.dispatch('ProjectsStore/getAllProjects').catch((err) => {
+        if (err.status == 401) store.dispatch('AuthStore/logOut');
+      });
     },
     components: {
       'projects-list': ProjectsList
@@ -44,7 +46,7 @@
             component: 'project-edit-modal',
             title: 'Edit project info',
             data: {
-              project: this.projects.filter((item) => item.id == this.$route.query.edit_item)[0]
+              project: this.projectsList.filter((item) => item.id == this.$route.query.edit_item)[0]
             }
           });
         } else {

@@ -30,6 +30,7 @@
     created() {
       if (Cookie.get('authToken')) {
         this.$axios.setToken(Cookie.get('authToken'), 'Bearer');
+        Cookie.set('authToken', Cookie.get('authToken'), {expires: 30});
       }
     }
   };

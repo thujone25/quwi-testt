@@ -10,7 +10,7 @@ export const actions = {
   signIn({commit}, data) {
     return new Promise((resolve, reject) => {
       this.$axios.post('auth/login', data).then((resp) => {
-        if (process.client) Cookie.set('authToken', resp.data.token);
+        if (process.client) Cookie.set('authToken', resp.data.token, {expires: 30});
         this.$axios.setToken(resp.data.token, 'Bearer');
         commit('setAuth', true);
         resolve();

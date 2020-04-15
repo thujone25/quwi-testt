@@ -21,7 +21,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Test for quwi project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://quwi.com/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
   /*

@@ -1,7 +1,7 @@
 <template>
   <div class="sign-in">
     <div class="sign-in__form-wrapper">
-      <auth-from />
+      <auth-form @formsubmitted="catchSuccess" />
     </div>
   </div>
 </template>
@@ -11,11 +11,19 @@
 </router>
 
 <script>
+  import {mapActions, mapMutations} from 'vuex';
   import SignInForm from '@/components/auth_components/SignInForm';
 
   export default {
     components: {
-      'auth-from': SignInForm
+      'auth-form': SignInForm
+    },
+    methods: {
+      ...mapActions('AuthStore', ['signIn']),
+      ...mapMutations(['setRequestProgress']),
+      catchSuccess() {
+        this.$router.push('/');
+      }
     }
   }
 </script>

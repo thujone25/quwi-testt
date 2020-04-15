@@ -6,7 +6,8 @@
       <template v-if="authenticated">
         <nuxt-link :to="{name: 'HomePage'}"
                    class="default-header__nav-link">PROJECTS</nuxt-link>
-        <button class="default-header__nav-link">LOGOUT</button>
+        <button class="default-header__nav-link"
+                @click="makeLogout">LOGOUT</button>
       </template>
       <template v-else>
         <nuxt-link :to="{name: 'SignInPage'}"
@@ -17,11 +18,19 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex';
+  import {mapState, mapActions} from 'vuex';
 
   export default {
     computed: {
       ...mapState('AuthStore', ['authenticated'])
+    },
+    methods: {
+      ...mapActions('AuthStore', ['logOut']),
+      makeLogout() {
+        this.logOut().then(() => {
+          this.$router.push({name: 'SignInPage'});
+        });
+      }
     }
   };
 </script>

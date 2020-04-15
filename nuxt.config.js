@@ -4,6 +4,12 @@ module.exports = {
   router: {
     middleware: 'checkAuth'
   },
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  axios: {
+    baseURL: 'https://api.quwi.com/v2/'
+  },
   /*
   ** Headers of the page
   */

@@ -32,7 +32,7 @@
       classes: {type: Array}
     },
     methods: {
-      catchInput() {}
+      catchInput() { this.$emit('valuechanged', this.$refs.input.value); }
     }
   }
 </script>
@@ -52,6 +52,10 @@
   }
   .qw-input__input--with-error {
     border: 1px solid rgba(255, 0, 0, 0.6);
+  }
+  .qw-input__input[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
   }
   .qw-input__error-text {
     display: block;

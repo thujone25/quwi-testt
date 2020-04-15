@@ -29,5 +29,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .qw-btn[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
 </style>
 

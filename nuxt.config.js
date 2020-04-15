@@ -1,6 +1,9 @@
 module.exports = {
   plugins: ['~/plugins/sharedCompsRegistration'],
   css: ['~assets/css/base.css'],
+  router: {
+    middleware: 'checkAuth'
+  },
   /*
   ** Headers of the page
   */

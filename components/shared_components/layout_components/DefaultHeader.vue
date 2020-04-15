@@ -3,25 +3,25 @@
     <nuxt-link to="/"
                class="default-header__logo-link" />
     <nav class="default-header__links-cont">
-      <!-- <template v-if="authed"></template>
+      <template v-if="authenticated">
+        <nuxt-link :to="{name: 'HomePage'}"
+                   class="default-header__nav-link">PROJECTS</nuxt-link>
+        <button class="default-header__nav-link">LOGOUT</button>
+      </template>
       <template v-else>
         <nuxt-link :to="{name: 'SignInPage'}"
                    class="default-header__nav-link">LOGIN</nuxt-link>
-      </template> -->
-      <nuxt-link :to="{name: 'SignInPage'}"
-                 class="default-header__nav-link">LOGIN</nuxt-link>
-      <nuxt-link :to="{name: 'HomePage'}"
-                 class="default-header__nav-link">PROJECTS</nuxt-link>
+      </template>
     </nav>
   </header>
 </template>
 
 <script>
+  import {mapState} from 'vuex';
+
   export default {
-    data() {
-      return {
-        authed: false
-      };
+    computed: {
+      ...mapState('AuthStore', ['authenticated'])
     }
   };
 </script>

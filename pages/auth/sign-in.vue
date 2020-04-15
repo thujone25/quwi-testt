@@ -7,7 +7,7 @@
 </template>
 
 <router>
-  {name: 'SignInPage'}
+  {name: 'SignInPage', meta: {guestOnly: true}}
 </router>
 
 <script>

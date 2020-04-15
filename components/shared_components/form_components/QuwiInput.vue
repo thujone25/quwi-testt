@@ -2,6 +2,7 @@
   <label class="qw-input">
     <input :value="value"
            :id="id"
+           :name="name"
            :placeholder="placeholder"
            :disabled="disabled"
            :readonly="readonly"
@@ -26,6 +27,7 @@
       value: {type: [String, Number], required: true},
       placeholder: {type: String},
       id: {type: [Number, String]},
+      name: {type: [Number, String]},
       autofocus: {type: Boolean},
       classes: {type: Array}
     },

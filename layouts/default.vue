@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import Cookie from 'js-cookie';
   import QWModal from '@/components/shared_components/QuwiModal';
   import DefaultHeader from '@/components/shared_components/layout_components/DefaultHeader';
   // MODALS
@@ -25,6 +26,11 @@
     computed: {
       activeModal() { return this.$store.state.ModalStore.activeComponent; },
       modalData() { return this.$store.state.ModalStore.data; }
+    },
+    created() {
+      if (Cookie.get('authToken')) {
+        this.$axios.setToken(Cookie.get('authToken'), 'Bearer');
+      }
     }
   };
 </script>
